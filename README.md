@@ -33,8 +33,16 @@ Conjunto de **10 consultas estratégicas** que demonstram a extração de inteli
     * Auditoria de movimentações.
 
 ### 📄 4. `4_manipulacao.sql` (DML - Update/Delete)
-Scripts para manutenção e correção de dados.
-* **Técnica Avançada:** Uso de **Subqueries** para localizar registros pelo código externo (ex: `WHERE codigo = 'USR-01'`) antes de atualizar ou deletar, simulando uma aplicação real onde o usuário não conhece o ID numérico interno.
+Script dedicado à **manutenção e correção dos dados**.
+#### Destaques:
+- Uso de **subqueries** para localizar registros pelo `codigo` externo  
+  *(simulando aplicativos reais, que exibem apenas identificadores amigáveis)*  
+- Atualizações de: telefone, estoque, instituição vinculada, nomes de variedades  
+- Exclusões seguras:
+  - laudos laboratoriais  
+  - trocas duplicadas  
+  - movimentações específicas  
+  - colheitas incorretas
 
 ---
 
@@ -46,13 +54,20 @@ Para evitar erros de chave estrangeira (Foreign Key), é **obrigatório** seguir
 2.  Executar **`2_povoamento.sql`** (Insere a massa de dados).
 3.  Executar **`3_consultas.sql`** (Gera os relatórios de teste).
 4.  Executar **`4_manipulacao.sql`** (Testa as atualizações e exclusões).
+> Recomendação: executar no **DBeaver** ou **pgAdmin**, em um banco PostgreSQL vazio.
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
-* **Linguagem:** SQL (PostgreSQL Dialect)
+* **Linguagem:** SQL (PostgreSQL)
 * **Ferramenta:** DBeaver / pgAdmin
 * **Modelagem:** Conceito de Identificadores Semânticos (`USR-01`, `BIO-02`) para melhor legibilidade.
 
 ---
-**Autora:** Kamilla de Paula
+
+## 📝 Autoria
+
+Produzido por **Kamilla de Paula**  
+Experiência Prática 4 – Modelagem de Banco de Dados
+Projeto acadêmico desenvolvido para fins de estudo, pesquisa e demonstração técnica.
+Curso: Análise e Desenvolvimento de Sistemas (EAD)
